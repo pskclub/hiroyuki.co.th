@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Corlate</title>
-
+    <title>Hiroyuki Thailand</title>
+    <link rel="icon" type="image/png" href="{{ asset("public/images/favicon.ico") }}">
     <!-- core CSS -->
     <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/font-awesome.min.css') }}" rel="stylesheet">

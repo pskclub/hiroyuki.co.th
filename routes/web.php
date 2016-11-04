@@ -14,6 +14,7 @@
 Route::get('/', 'MainController@index');
 Route::get('/contact', 'MainController@contact');
 Route::get('/network', 'MainController@network');
+Route::get('/products', 'ProductController@products');
 
 Route::get('/admin/login', 'Auth\CustomAuthController@getAdminLogin');
 Route::post('/admin/login', 'Auth\CustomAuthController@postAdminLogin');
