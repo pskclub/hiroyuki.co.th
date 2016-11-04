@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-           หมวดหมู่สินค้า
+           หมวดหมู่สินค้า <a class="btn btn-info" href="{{ url('admin/category/add') }}">เพื่ม</a>
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?= url("admin") ?>"><i class="fa fa-dashboard"></i> DashBoard</a></li>

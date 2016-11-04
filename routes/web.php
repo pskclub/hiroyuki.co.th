@@ -29,6 +29,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/user/{id}/delete', 'admin\UserController@getDelete')->where(['id' => '[0-9]+']);
 
     Route::get('/category', 'admin\CategoryController@index');
+    Route::get('/category/add', 'admin\CategoryController@add');
+    Route::post('/category/add', 'admin\CategoryController@store');
+    Route::get('/category/{id}/edit', 'admin\CategoryController@edit')->where(['id' => '[0-9]+']);
+    Route::post('/category/{id}/edit', 'admin\CategoryController@update')->where(['id' => '[0-9]+']);
+    Route::get('/category/{category_id}/delete', 'admin\CategoryController@delete');
+
+    Route::get('/product', 'admin\ProductController@index');
+    Route::get('/product/add', 'admin\ProductController@add');
+    Route::post('/product/add', 'admin\ProductController@store');
+    Route::get('/product/{product_id}/delete', 'admin\ProductController@delete');
 
 
     //------------------------
