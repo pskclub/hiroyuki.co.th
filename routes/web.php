@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index');
+Route::get('/contact', 'MainController@contact');
+Route::get('/network', 'MainController@network');
 
 Route::get('/admin/login', 'Auth\CustomAuthController@getAdminLogin');
 Route::post('/admin/login', 'Auth\CustomAuthController@postAdminLogin');
