@@ -12,4 +12,13 @@ class Category extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function getImageAttribute($value)
+    {
+        if ($value != null)
+            return config('app.url') . '/storage/app/public/' . $value;
+
+        return null;
+
+    }
 }

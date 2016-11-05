@@ -14,7 +14,9 @@
 Route::get('/', 'MainController@index');
 Route::get('/contact', 'MainController@contact');
 Route::get('/network', 'MainController@network');
-Route::get('/products', 'ProductController@products');
+Route::get('/category', 'ProductController@categoryList');
+Route::get('/category/{category_id}', 'ProductController@productByCategoryId');
+Route::get('/product/{product_id}', 'ProductController@productById');
 
 Route::get('/admin/login', 'Auth\CustomAuthController@getAdminLogin');
 Route::post('/admin/login', 'Auth\CustomAuthController@postAdminLogin');
@@ -32,13 +34,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/category', 'admin\CategoryController@index');
     Route::get('/category/add', 'admin\CategoryController@add');
     Route::post('/category/add', 'admin\CategoryController@store');
-    Route::get('/category/{id}/edit', 'admin\CategoryController@edit')->where(['id' => '[0-9]+']);
-    Route::post('/category/{id}/edit', 'admin\CategoryController@update')->where(['id' => '[0-9]+']);
+    Route::get('/category/{category_id}/edit', 'admin\CategoryController@edit')->where(['id' => '[0-9]+']);
+    Route::post('/category/{category_id}/edit', 'admin\CategoryController@update')->where(['id' => '[0-9]+']);
     Route::get('/category/{category_id}/delete', 'admin\CategoryController@delete');
 
     Route::get('/product', 'admin\ProductController@index');
     Route::get('/product/add', 'admin\ProductController@add');
     Route::post('/product/add', 'admin\ProductController@store');
+    Route::get('/product/{product_id}/edit', 'admin\ProductController@edit')->where(['id' => '[0-9]+']);
+    Route::post('/product/{product_id}/edit', 'admin\ProductController@update')->where(['id' => '[0-9]+']);
     Route::get('/product/{product_id}/delete', 'admin\ProductController@delete');
 
 

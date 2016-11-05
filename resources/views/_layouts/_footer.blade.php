@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <ul class="pull-right">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('products') }}">Products</a></li>
+                    <li><a href="{{ url('category') }}">Products</a></li>
                     <li><a href="{{ url('network') }}">Network</a></li>
                     <li><a href="{{ url('contact') }}">Contact</a></li>
                 </ul>

@@ -17,4 +17,11 @@ class Product extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function getImageAttribute($value)
+    {
+        if ($value != null)
+            return config('app.url') . '/storage/app/public/' . $value;
+
+    }
 }

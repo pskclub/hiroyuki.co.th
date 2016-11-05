@@ -3,11 +3,11 @@
 @section('content')
     <section class="content-header">
         <h1>
-            หมวดหมู่สินค้า
+            สินค้า
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?= url("admin") ?>"><i class="fa fa-dashboard"></i> DashBoard</a></li>
-            <li class="active">หมวดหมู่สินค้า</li>
+            <li class="active">สินค้า</li>
         </ol>
     </section>
 
@@ -23,16 +23,33 @@
         @endif
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">เพิ่มหมวดหมู่</h3>
+                <h3 class="box-title">เพิ่มสินค้า</h3>
             </div>
             <div class="box-body">
-                <form class="form-horizontal" method="post" action="{{ url('admin/category/add') }}"
+                <form class="form-horizontal" method="post" action="{{ url('admin/product/add') }}"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">ชื่อหมวดหมู่*</label>
+                        <label class="col-sm-2 control-label">รหัสสินค้า*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="name" placeholder="ชื่อหมวดหมู่" required>
+                            <input type="text" class="form-control" name="code" placeholder="รหัสสินค้า" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">หมวดหมู่สินค้า*</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="category" required>
+                                <option value="no">กรุณาเลือกหมวดหมู่</option>
+                                @foreach(\App\Category::all() as $category)
+                                    <option value="{{$category->id}}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ชื่อสินค้า*</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" placeholder="ชื่อสินค้า" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -59,7 +76,7 @@
         <hr>
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">รายการหมวดหมู่</h3>
+                <h3 class="box-title">รายการสินค้า</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -68,27 +85,27 @@
                     <tr>
                         <th style="width: 10px">#</th>
                         <th>รูป</th>
+                        <th>รหัสสินค้า</th>
                         <th>ชื่อ</th>
-                        <th>คำอธิบาย</th>
                         <th>จัดการ</th>
 
                     </tr>
-                    @foreach($categories as $category)
+                    @foreach($products as $product)
                         <tr>
-                            <td>{{ $category->id }}</td>
+                            <td>{{ $product->id }}</td>
                             <td>
-                                @if($category->image)
-                                    <img style="height: 50px" src="{{ $category->image }}" alt="">
+                                @if($product->image)
+                                    <img style="height: 50px" src="{{ $product->image }}" alt="">
                                 @endif
                             </td>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->description }}</td>
+                            <td>{{ $product->code }}</td>
+                            <td>{{ $product->name }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{ url('admin/category/'.$category->id.'/edit') }}"
+                                    <a href="{{ url('admin/product/'.$product->id.'/edit') }}"
                                        class="btn btn-warning">แก้ไข</a>
                                     <a onclick="return confirm('ยืนยันการลบ')"
-                                       href="{{ url('admin/category/'.$category->id.'/delete') }}"
+                                       href="{{ url('admin/product/'.$product->id.'/delete') }}"
                                        class="btn btn-danger">ลบ</a>
                                 </div>
                             </td>
@@ -96,6 +113,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {{ $products->links() }}
             </div>
             <!-- /.box-body -->
         </div>

@@ -13,6 +13,7 @@
     <link href="{{ asset('public/css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/modify.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="{{ asset('public/js/html5shiv.js') }}"></script>
     <script src="{{ asset('public/js/respond.min.js') }}"></script>

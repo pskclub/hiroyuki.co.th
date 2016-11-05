@@ -9,18 +9,19 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('public/images/logo.png') }}"
-                                                               style="max-height: 45px;" alt="logo"></a>
+                                                                   style="max-height: 45px;" alt="logo"></a>
             </div>
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="dropdown">
-                        <a href="{{ url('products') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+                        <a href="{{ url('products') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            @foreach(\App\Category::all() as $category)
+                                <li><a href="{{ url('category/'.$category->id) }}">{{ $category->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="{{ url('network') }}">Network</a></li>
