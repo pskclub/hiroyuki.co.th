@@ -31,6 +31,6 @@ class ProductController extends Controller
             array('from' => 'Hiroyuki.co.th <support@chlom.com>',
                 'to' => Setting::find(1)->email,
                 'subject' => 'Hiroyuki.co.th ติดต่อ',
-                'text' => 'กรุณาคลิกที่ลิ้งค์เพื่อยืนยันการสมัครสมาชิก ')));
+                'text' => 'กรุณาคลิกที่ลิ้งค์เพื่อยืนยันการสมัครสมาชิก '));
     }
 }
