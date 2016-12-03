@@ -4,6 +4,22 @@
 
 @section('content')
     <section id="contact-info">
+        <div class="container">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ 'ส่งข้อมูลการติดต่อเรียบร้อยแล้ว' }}
+                </div>
+            @endif
+        </div>
         <div class="center">
             <h2>How to Reach Us?</h2>
         </div>
@@ -43,9 +59,10 @@
                 <h2>Contact Hiroyuki (Thailand)</h2>
             </div>
             <div class="row contact-wrap">
-                <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post"
-                      action="sendemail.php">
+                {{--<div class="status alert alert-success" style="display: none"></div>--}}
+                <form class="contact-form" name="contact-form" method="post"
+                      action="{{ url('contact') }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
                             <label>Name *</label>
@@ -56,12 +73,12 @@
                             <input type="email" name="email" class="form-control" required="required">
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="number" class="form-control">
+                            <label>Phone *</label>
+                            <input type="tel" name="tel" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Company Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="company" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-5">

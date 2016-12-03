@@ -25,12 +25,35 @@ class ProductController extends Controller
 
     public function sendMail(Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'tel' => 'required',
+            'message' => 'required',
+        ]);
+
+        $product = Product::find($request->product_id);
         $mgClient = new Mailgun('key-5812076ae7940a4ea2fe0c481ac8c30b');
         $domain = "https://api.mailgun.net/v3/chlom.com";
         $mgClient->sendMessage("$domain",
             array('from' => 'Hiroyuki.co.th <support@chlom.com>',
                 'to' => Setting::find(1)->email,
-                'subject' => 'Hiroyuki.co.th ติดต่อ',
-                'text' => 'กรุณาคลิกที่ลิ้งค์เพื่อยืนยันการสมัครสมาชิก '));
+                'subject' => '[สอบถามราคา] จาก ' . $request->name,
+                'html' =>
+                    'Name : ' . $request->name . '<br><br>' .
+                    'Email : ' . $request->email . '<br><br>' .
+                    'Phone : ' . $request->tel . '<br><br>' .
+                    'Company : ' . $request->company . '<br><br>' .
+                    'Subject : สอบถามราคา' . '<br><br>' .
+                    'message : ' . $request->message . '<br><br><hr>' .
+                    '<h4>เกี่ยวกับสินค้า</h4><br>' .
+                    'Name : ' . $product->name . '<br><br>' .
+                    'Description : ' . $product->description . '<br><br>' .
+                    'Picture : <img style="max-width:100%" src="' . $product->image . '">'
+
+            ));
+
+        return redirect()->back()->with('success', true);
     }
 }

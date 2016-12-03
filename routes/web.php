@@ -13,11 +13,12 @@
 
 Route::get('/', 'MainController@index');
 Route::get('/contact', 'MainController@contact');
+Route::post('/contact', 'MainController@sendContact');
 Route::get('/network', 'MainController@network');
 Route::get('/category', 'ProductController@categoryList');
 Route::get('/category/{category_id}', 'ProductController@productByCategoryId');
 Route::get('/product/{product_id}', 'ProductController@productById');
-Route::get('/sendmail', 'ProductController@sendMail');
+Route::post('/product/sendmail', 'ProductController@sendMail');
 
 Route::get('/admin/login', 'Auth\CustomAuthController@getAdminLogin');
 Route::post('/admin/login', 'Auth\CustomAuthController@postAdminLogin');
