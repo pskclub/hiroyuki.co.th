@@ -47,6 +47,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('/product/{product_id}/edit', 'admin\ProductController@update')->where(['id' => '[0-9]+']);
     Route::get('/product/{product_id}/delete', 'admin\ProductController@delete');
 
+    Route::get('/setting', 'admin\HomeController@setting');
+    Route::post('/setting', 'admin\HomeController@setSetting');
+
 
     //------------------------
     Route::get('/logout', 'Auth\CustomAuthController@getAdminLogout');
