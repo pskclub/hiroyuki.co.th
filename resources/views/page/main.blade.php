@@ -31,13 +31,13 @@
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
-                                <div class="carousel-content">
+                               {{-- <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur
                                         adipisicing
                                         elit</h1>
                                     <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem
                                         aperiam, eaque ipsa...</h2>
-                                </div>
+                                </div>--}}
                             </div>
 
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
@@ -55,11 +55,11 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur
+                                   {{-- <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur
                                         adipisicing
                                         elit</h1>
                                     <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
+                                        aperiam, eaque ipsa...</h2>--}}
                                 </div>
                             </div>
 
