@@ -48,6 +48,7 @@ class ProductController extends Controller
                     'Subject : สอบถามราคา' . '<br><br>' .
                     'message : ' . $request->message . '<br><br><hr>' .
                     '<h4>เกี่ยวกับสินค้า</h4><br>' .
+                    'code : ' . $product->code . '<br><br>' .
                     'Name : ' . $product->name . '<br><br>' .
                     'Description : ' . $product->description . '<br><br>' .
                     'Picture : <img style="max-width:100%" src="' . $product->image . '">'
