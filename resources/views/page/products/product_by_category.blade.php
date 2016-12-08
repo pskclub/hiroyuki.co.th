@@ -89,15 +89,16 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">สอบถามราคา</h4>
+                            <h4 class="modal-title" id="myModalLabel">สอบถามราคา [{{ $product->name }}]</h4>
                         </div>
                         <div class="modal-body">
-
+                            <img src="{{$product->image}}" alt="" style="max-width: 100%;margin-bottom: 20px" class="thumbnail">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="form-group">
                                 <label>ชื่อและนามสกุล*</label>
-                                <input type="text" name="name" class="form-control" placeholder="ชื่อและนามสกุล" required>
+                                <input type="text" name="name" class="form-control" placeholder="ชื่อและนามสกุล"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <label>อีเมล*</label>
@@ -119,7 +120,8 @@
                             </div>
                             <div class="form-group">
                                 <label>ข้อความ*</label>
-                                <textarea class="form-control" name="message" placeholder="ข้อความ" rows="4" required></textarea>
+                                <textarea class="form-control" name="message" placeholder="ข้อความ" rows="4"
+                                          required></textarea>
                             </div>
 
 
