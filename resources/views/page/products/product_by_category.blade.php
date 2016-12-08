@@ -92,7 +92,7 @@
                             <h4 class="modal-title" id="myModalLabel">สอบถามราคา [{{ $product->name }}]</h4>
                         </div>
                         <div class="modal-body">
-                            <img src="{{$product->image}}" alt="" style="max-width: 100%;margin-bottom: 20px" class="thumbnail">
+                            <img src="{{$product->image}}" alt="" style="max-width: 100%;margin-bottom: 20px" class="thumbnail center-block">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="form-group">
