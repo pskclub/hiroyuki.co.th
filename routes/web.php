@@ -49,6 +49,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('/setting', 'admin\HomeController@setting');
     Route::post('/setting', 'admin\HomeController@setSetting');
+    Route::post('/slide', 'admin\HomeController@storeSlide');
+    Route::get('/slide/{id}/delete', 'admin\HomeController@delSlide');
+    Route::post('/slide/{id}/update', 'admin\HomeController@updateSlide');
 
 
     //------------------------

@@ -34,18 +34,7 @@
                     </div>
 
                     <div class="col-sm-7 map-content">
-                        <address>
-                            <h5>Hiroyuki (Thailand) Co.,Ltd.</h5>
-                            <p></p>
-                            <p>319/23 ถนนแสมดำ แขวงแสมดำ เขตบางขุนเทียน
-                                กรุงเทพมหานคร 10150 ประเทศไทย</p>
-                            <p>319/23 Samaedam Road, Samaedam, Bangkhunthien
-                                Bangkok 10150 Thailand</p>
-                            <p>
-                                Phone +662 416 3215-6 , +662 416 3217 <br>
-                                Email hiro.thailand@hiroyuki.co.th <br>
-                                Tax ID 0105559053421</p>
-                        </address>
+                        {!! \App\Setting::find(1)->contact !!}
 
                     </div>
                 </div>

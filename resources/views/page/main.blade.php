@@ -22,56 +22,32 @@
     <section id="main-slider" class="no-margin">
         <div class="carousel slide">
             <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
+                @foreach(\App\Slide::all() as $id => $slide )
+                    <li data-target="#main-slider" data-slide-to="{{$id}}" {{ $id == 0 ? 'class=active':'' }}></li>
+                @endforeach
             </ol>
             <div class="carousel-inner">
+                @foreach(\App\Slide::all() as $id => $slide )
 
-                <div class="item active" style="background-image: url(public/images/slider/bg1.png)">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                               {{-- <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing
-                                        elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
-                                </div>--}}
-                            </div>
-
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                {{--  <div class="slider-img">
-                                      <img src="public/images/slider/bg1.png" class="img-responsive">
-                                  </div>--}}
-                            </div>
-
-                        </div>
-                    </div>
-                </div><!--/.item-->
-
-                <div class="item" style="background-image: url(public/images/slider/bg2.png)">
-                    <div class="container">
-                        <div class="row slide-margin">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                   {{-- <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing
-                                        elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>--}}
+                    <div class="item {{ $id == 0 ? 'active':'' }}" style="background-image: url({{ $slide->image }})">
+                        <div class="container">
+                            <div class="row slide-margin">
+                                <div class="col-sm-6">
+                                    <div class="carousel-content">
+                                        {!!   $slide->description !!}
+                                    </div>
                                 </div>
-                            </div>
+                                {{--
+                                                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                                                --}}{{--  <div class="slider-img">
+                                                                      <img src="public/images/slider/bg1.png" class="img-responsive">
+                                                                  </div>--}}{{--
+                                                            </div>--}}
 
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                {{--<div class="slider-img">
-                                    <img src="public/images/slider/bg2.png" class="img-responsive">
-                                </div>--}}
                             </div>
-
                         </div>
-                    </div>
-                </div><!--/.item-->
+                    </div><!--/.item-->
+                @endforeach
 
             </div><!--/.carousel-inner-->
         </div><!--/.carousel-->
@@ -85,14 +61,7 @@
 
     <section id="feature">
         <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Features</h2>
-                <p class="lead">ผู้ผลิตสายรัด PP/PET และจำหน่าย เครื่องรัด ชั้นนำจากต่างประเทศ ตลอดจนให้คำปรึกษา
-                    งานด้านบรรุภัณฑ์ และ วัสดุที่ใช้ในงานแพ็คกิ้งในอุตสาหกรรม เช่น เครื่องรัดเหล็กพืด
-                    เครื่องรัดสายพลาสติก ,
-                    เครื่องพันฟิล์ม และฟิล์มยืดพันพาเลท ซึ่งผลิตภัณฑ์ ของบริษัทฯ ได้รับใบรับรอง คุณภาพ ROHS test และ ISO
-                    14001, ISO 9001</p>
-            </div>
+            {!! \App\Setting::find(1)->features !!}
 
             {{--  <div class="row">
                   <div class="features">
@@ -149,13 +118,7 @@
     </section><!--/#feature-->
     <section id="recent-works">
         <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Hiroyuki (Thailand)</h2>
-                <p class="lead">บริษัท ฮิโรยูกิ อินดัสตรีส์ จำกัด ก่อตั้งเมื่อปี 2001 ที่รัฐ Jahor Bahru ประเทศ มาเลเซีย
-                    ประกอบการผลิตสายรัด Polypropylene (PP) และ Polyester (PET) , Cast stretch film และ PE Tying Twins
-                    โดยมีกำลังผลิต 25,000 ตัน ต่อปี โดยจัดจำหน่ายให้กับลูกค้าในกลุ่ม ประเทศอาเซี่ยน , ยุโรป ตะวันออกกลาง
-                    และประเทศในทวีปอเมริกา ซึ่งผลิตภัณฑ์ของบริษัทฯ ได้รับใบรับรองคุณภาพ ISO14001 และ ISO 9001</p>
-            </div>
+            {!! \App\Setting::find(1)->hiroyuki !!}
         </div>
     </section>
 
