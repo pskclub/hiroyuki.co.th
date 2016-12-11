@@ -195,6 +195,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/plugins/code_view.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/plugins/colors.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/plugins/draggable.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/plugins/table.css" />
 
 <!-- Include JS file. -->
 <script type='text/javascript'
@@ -202,6 +203,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/code_view.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/colors.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/align.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/url.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/paragraph_format.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/link.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/plugins/font_size.min.js"></script>
 <script>
     $(function () {
         $('.edit').froalaEditor({
