@@ -199,11 +199,7 @@
         ],
         toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
-        image_advtab: true,
-
-        content_css: [
-            '//www.tinymce.com/css/codepen.min.css'
-        ]});</script>
+        image_advtab: true});</script>
 
 @endpush
 
